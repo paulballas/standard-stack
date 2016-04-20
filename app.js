@@ -1,4 +1,5 @@
-require('coffee-script/register');
+CoffeeScript = require('coffee-script');
+CoffeeScript.register()
 
 var express = require('express');
 var path = require('path');
