@@ -29,7 +29,7 @@ block content
       
       .row
         .col-md-4.col-xs-12
-          h3.upper Events + Travel
+          h3.upper Events
         .col-md-4.col-xs-12
           .company.pana
             h4.upper.m-b-0 Travel
@@ -115,22 +115,21 @@ block content
     .container
       .row
         .col-xs-12
-          form#mc-embedded-subscribe-form.validate(action='//standardstack.us13.list-manage.com/subscribe/post?u=70e526146648ccb2f41acb139&id=ccf6c62b63', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
-            #mc_embed_signup_scroll
-              h3.m-b-0 Subscribe to our mailing list
-              p Stay updated with the latest tools and trends for startups.
-      .row.form-item
+          h3.m-b-0 Subscribe to our mailing list
+          p Stay updated with the latest tools and trends for startups.
+      form#mc-embedded-subscribe-form.validate(action='//standardstack.us13.list-manage.com/subscribe/post?u=70e526146648ccb2f41acb139&id=ccf6c62b63', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='' class="row form-item")
         .col-md-6.col-xs-12
-            label(for='mce-EMAIL') Email Address 
+          .mc-field-group
+            label(for='mce-EMAIL') Email Address
             input#mce-EMAIL.required.email(type='email', value='', name='EMAIL' placeholder="Email address" class="form-control")
           #mce-responses.clear
             #mce-error-response.response(style='display:none')
             #mce-success-response.response(style='display:none')
-          // real people should not fill this in and expect good things - do not remove this or risk form bot signups
           div(style='position: absolute; left: -5000px;', aria-hidden='true')
             input(type='text', name='b_70e526146648ccb2f41acb139_ccf6c62b63', tabindex='-1', value='')
-        .col-md-6.col-xs-12.clear
-          input#mc-embedded-subscribe.button.m-b-0(type='submit', value='Subscribe', name='subscribe')
+        .col-md-6.col-xs-12
+          .clear
+            input#mc-embedded-subscribe.button.m-b-0(type='submit', value='Subscribe', name='subscribe')
       .seperator
       .row.hello
         .col-xs-12
