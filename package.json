@@ -7,10 +7,6 @@
     "url": "git://github.com/paulballas/standard-stack"
   },
   "private": true,
-  "scripts": {
-    "start": "node ./bin/www",
-    "postinstall": "gulp default"
-  },
   "engines": {
     "node": "0.10.x"
   },
@@ -37,5 +33,9 @@
     "modularscale-sass": "^2.1.1",
     "standard": "git+https://github.com/tivonaporter/standard.git",
     "sweetalert": "^1.1.3"
-  }
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "postinstall": "gulp"
+  },
 }
