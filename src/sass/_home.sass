@@ -1,0 +1,43 @@
+.main
+  padding-top: ms(6)
+  padding-bottom: ms(6)
+.companies
+  padding-top: ms(6)
+  padding-bottom: ms(6)
+  .company
+    padding-left: ms(1)
+    padding-top: ms(-6)
+    border-left: 2px solid darken($brown, 20%)
+    border-top-right-radius: 3px
+    border-bottom-right-radius: 3px
+    transition: 400ms
+    -webkit-transition: 400ms
+    &:hover
+      background: darken($brown, 10%)
+      cursor: pointer
+    .marker
+      display: block
+      height: 60px
+      width: 2px
+      background: $gray
+      float: left
+      margin-right: ms(1)
+
+.modal
+  display: none
+  width: ms(14)
+  background: $white
+  height: 100%
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 10000
+  overflow-y: scroll
+  @media screen and (max-width: 950px)
+    height: 100%
+    top: 10%
+    left: 15px
+    right: 15px
+    width: 100%
+    position: fixed
+    overflow-x: hidden

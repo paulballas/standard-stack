@@ -1,0 +1,48 @@
+-var title = 'Standard Stack'
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta( content="width=device-width, user-scalable=no", name="viewport" )
+    meta( name="description", content="Curated list of the best tools for growing startups.")
+      
+    meta( property="og:title", content="Standard Stack" )
+    meta( property="og:type", content="website" )
+    meta( property="og:url", content="https://standardstack.com" )
+    meta( property="og:description", content="Curated list of the best tools for growing startups." )
+    meta( property="og:image", content="https://pana.com/images/logo/standard-stack-logo-brown-lg.png" )
+    meta( property="og:image:width", content="90" )
+    meta( property="og:image:height", content="89" )
+      
+    meta( property="twitter:card", content="summary_large_image" )
+    meta( property="twitter:url", content="https://standardstack.com" )
+    meta( property="twitter:title", content="The best tools for growing startups." )
+    meta( property="twitter:description", content="Curated list of the best tools for growing startups." )
+    meta( property="twitter:image", content="https://pana.com/images/logo/standard-stack-logo-brown-lg.png" )
+    title= title
+    
+    link(rel='apple-touch-icon', sizes='57x57', href='/images/apple-touch-icon-57x57.png')
+    link(rel='apple-touch-icon', sizes='60x60', href='/images/apple-touch-icon-60x60.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='/images/apple-touch-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='/images/apple-touch-icon-76x76.png')
+    link(rel='icon', type='image/png', href='/images/favicon-32x32.png', sizes='32x32')
+    link(rel='icon', type='image/png', href='/images/favicon-16x16.png', sizes='16x16')
+    link(rel='manifest', href='/images/manifest.json')
+    link(rel='mask-icon', href='/images/safari-pinned-tab.svg', color='#5bbad5')
+    meta(name='msapplication-TileColor', content='#da532c')
+    meta(name='theme-color', content='#ffffff')
+    
+    block css
+      link(rel='stylesheet', href='/css/sweetalert.css')
+      link(rel='stylesheet', href='/css/app.css')
+    block js
+      if ENV_DEVELOPMENT
+        script(src='http://localhost:35729/livereload.js')
+  body
+    block content
+    
+    block scripts
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+      script(src='/js/sweetalert.min.js')
+      script(src='/js/app.js')
