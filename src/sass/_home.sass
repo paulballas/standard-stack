@@ -1,6 +1,9 @@
 .main
   padding-top: ms(6)
   padding-bottom: ms(6)
+  img
+    border-radius: 100%
+    border: 2px solid lighten($brown, 20%)
 .companies
   padding-top: ms(6)
   padding-bottom: ms(6)
@@ -34,9 +37,14 @@
     background: darken($gray, 10%)
     margin-top: ms(0)
     margin-bottom: ms(0)
+  .email-btn
+    padding-top: ms(2)
   .hello
     a
+      font-family: $ch-medium
+      color: $red
       font-size: ms(1)
+      padding-left: ms(-5)
       text-decoration: none
       transition: 200ms
       -webkit-transition: 200ms

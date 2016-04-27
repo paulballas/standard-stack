@@ -1,0 +1,40 @@
+.popover
+  display: none
+  z-index: 500
+  *
+    color: $black
+  .glass-panel
+    display: block
+    position: fixed
+    background: rgba(145,106,112,0.4)
+    z-index: 1000
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+  .popover-view
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 2000
+    height: ms(12)
+    min-height: 100%
+    overflow-x: hidden
+    overflow-y: scroll
+    width: ms(12)
+    max-width: ms(12)
+    padding-top: ms(6)
+    +target(md)
+      width: ms(14)
+      max-width: ms(14)
+  .popover-items
+    img
+      border: 3px solid $dark-gray
+      border-radius: ms(-5)
+      display: block
+      margin-bottom: ms(2)
+    ul
+      padding-left: ms(0)
+  .popover-btns
+    a
+      width: 100%

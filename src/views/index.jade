@@ -1,116 +1,43 @@
-extends layout
-
-block content
-  .main.gray-bg
-    .container
-      .row
+mixin popover(company)
+  .popover(id="#{company.uid}")
+    .glass-panel
+    .container.popover-view.gray-bg
+      .row.popover-items
         .col-xs-12
-          img.icon-sm( src="/images/logo/standard-stack-logo-white-lg.png" alt ="standard stack logo" )
+          if company.getImage("stack.logo")
+            img.icon-md.m-auto( src = company.getImage("stack.logo").url )
+          h3 #{company.getText("stack.title")}
+          p #{company.getText("stack.about")}
           .space-2
-      .row
+          h5.upper why they're awesome
+          ul
+            each awesome in company.data['stack.awesomeness'].value
+              li #{awesome.description.value}
+      .space-2
+      .row.popover-items.popover-btns
         .col-xs-12
-          h1.m-b-0 standard stack
-          h3.m-b-0.book Curated list of the best tools for growing startups. 
-  
+          a.btn-default.btn-large.btn-brown(href="#{company.getText('stack.url')}?utm_source=Standard%20Stack&utm_medium=Website&utm_term=sone&utm_campaign=Standard%20Stack" target="_blank") Go to #{company.getText("stack.title")}
+        .col-xs-12
+          a.btn-default.btn-large.btn-dark-gray Back to Standard Stack
+            
+extends layout
+        
+block content  
   .companies.brown-bg
     .container.dark-bg
-      .row
-        .col-md-4.col-xs-12
-          h3.upper hr
-        .col-md-8.col-xs-12
-          .company.gusto
-            h4.upper.m-b-0 payroll
-            p.grow Gusto
-          .company.zenefits
-            h4.upper.m-b-0 health insurance
-            p.grow Zenefits
-      
-      .space-4
-      
-      .row
-        .col-md-4.col-xs-12
-          h3.upper Events
-        .col-md-4.col-xs-12
-          .company.pana
-            h4.upper.m-b-0 Travel
-            p.grow Pana
-          .company.calendly
-            h4.upper.m-b-0 Scheduling
-            p.grow Calendly
-        .col-md-4.col-xs-12
-          .company.clara
-            h4.upper.m-b-0 Assistant
-            p.grow Clara
-      
-      .space-4
+      each category, index in results
+        .row
+          .col-md-4.col-xs-12
+            h3.upper #{index}
+          .col-md-8.col-xs-12
+            each company in category  
+              .company( data-id="#{company.uid}" )
+                h4.upper.m-b-0 #{company.getText("stack.subcategory")}
+                 p.grow #{company.getText("stack.title")}
+              +popover(company)
+        .space-4
             
-      .row
-        .col-md-4.col-xs-12
-          h3.upper Books
-        .col-md-8.col-xs-12
-          .company.bench
-            h4.upper.m-b-0 Accounting
-            p.grow Bench
-          .company.expensify
-            h4.upper.m-b-0 Expenses
-            p.grow Expensify
-            
-      .space-4
-      
-      .row
-        .col-md-4.col-xs-12
-          h3.upper sales
-        .col-md-8.col-xs-12
-          .company.streak
-            h4.upper.m-b-0 CRM
-            p.grow Streak
-          .company.sendbloom
-            h4.upper.m-b-0 Outbound
-            p.grow Sendbloom
-    
-      .space-4
-      
-      .row
-        .col-md-4.col-xs-12
-          h3.upper support + marketing
-        .col-md-8.col-xs-12
-          .company.intercom
-            h4.upper.m-b-0 Customer support
-            p.grow Intercom
-          .company.moo
-            h4.upper.m-b-0 Print
-            p.grow Moo
-            
-      .space-4
-      
-      .row
-        .col-md-4.col-xs-12
-          h3.upper Internal communication
-        .col-md-8.col-xs-12
-          .company.paper
-            h4.upper.m-b-0 Doucment flow
-            p.grow Dropbox Paper
-          .company.slack
-            h4.upper.m-b-0 Team communication
-            p.grow Slack
-      
-      .space-4
-      
-      .row
-        .col-md-4.col-xs-12
-          h3.upper Miscellaneous
-        .col-md-4.col-xs-12
-          .company.uberconference
-            h4.upper.m-b-0 Conference calls
-            p.grow Uberconference
-          .company.dialpad
-            h4.upper.m-b-0 Phone
-            p.grow Dialpad
-        .col-md-4.col-xs-12
-          .company.bond
-            h4.upper.m-b-0 Customer delight
-            p.grow Bond
-
+  
   .email.gray-bg
     .container
       .row
@@ -118,7 +45,7 @@ block content
           h3.m-b-0 Subscribe to our mailing list
           p Stay updated with the latest tools and trends for startups.
       form#mc-embedded-subscribe-form.validate(action='//standardstack.us13.list-manage.com/subscribe/post?u=70e526146648ccb2f41acb139&id=ccf6c62b63', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='' class="row form-item")
-        .col-md-6.col-xs-12
+        .col-md-8.col-xs-12
           .mc-field-group
             label(for='mce-EMAIL') Email Address
             input#mce-EMAIL.required.email(type='email', value='', name='EMAIL' placeholder="Email address" class="form-control")
@@ -127,17 +54,11 @@ block content
             #mce-success-response.response(style='display:none')
           div(style='position: absolute; left: -5000px;', aria-hidden='true')
             input(type='text', name='b_70e526146648ccb2f41acb139_ccf6c62b63', tabindex='-1', value='')
-        .col-md-6.col-xs-12
+        .col-md-4.col-xs-12.email-btn
           .clear
             input#mc-embedded-subscribe.button.m-b-0(type='submit', value='Subscribe', name='subscribe')
-      .seperator
+      .space-2
       .row.hello
         .col-xs-12
-          a(href='mailto:hi@standardstack.com') Say hello!
-                
-  .footer.brown-bg
-    .container
-      .row
-        .col-xs-12.center.xs.dark-bg
-          p.small.m-b-0 Standard Stack© 2016
-    
+          p Don't want to sign up, but still want to say hello? 
+            a(href='mailto:hi@standardstack.com') Email us.

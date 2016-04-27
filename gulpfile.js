@@ -47,11 +47,6 @@ gulp.task('images', function () {
 gulp.task('coffee', function() {
   gulp.src('./src/js/*.coffee')
     .pipe(coffee({bare: true}))
-    .pipe(gulp.dest('./src/jsout/'));
-});
-
-gulp.task('compress', function() {
-  return gulp.src('./src/jsout/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('./build/js/'));
 });
@@ -61,6 +56,5 @@ gulp.task('default', [
   'images',
   'develop',
   'coffee',
-  'compress',
   'watch'
 ]);
