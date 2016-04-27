@@ -13,11 +13,10 @@ mixin popover(company)
           ul
             each awesome in company.data['stack.awesomeness'].value
               li #{awesome.description.value}
-      .space-2
-      .row.popover-items.popover-btns
-        .col-xs-12
+        .space-2
+        .col-xs-12.popover-btns
           a.btn-default.btn-large.btn-brown(href="#{company.getText('stack.url')}?utm_source=Standard%20Stack&utm_medium=Website&utm_term=sone&utm_campaign=Standard%20Stack" target="_blank") Go to #{company.getText("stack.title")}
-        .col-xs-12
+        .col-xs-12.popover-btns
           a.btn-default.btn-large.btn-dark-gray.close Back to Standard Stack
             
 extends layout
