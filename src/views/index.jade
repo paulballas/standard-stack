@@ -1,43 +1,43 @@
 mixin popover(company)
   .popover(id="#{company.uid}")
     .glass-panel
-    .container.popover-view.gray-bg
+    .container.popover-view.tan-bg
       .row.popover-items
-        .col-xs-12
+        .col-xs-12.dark-bg
           if company.getImage("stack.logo")
             img.icon-md.m-auto( src = company.getImage("stack.logo").url )
-          h3 #{company.getText("stack.title")}
+          h2.bold #{company.getText("stack.title")}
           p #{company.getText("stack.about")}
-          .space-2
-          h5.upper why they're awesome
+          .space-1
+          h3 Why we use them.
           ul
             each awesome in company.data['stack.awesomeness'].value
               li #{awesome.description.value}
         .space-2
         .col-xs-12.popover-btns
-          a.btn-default.btn-large.btn-brown(href="#{company.getText('stack.url')}?utm_source=Standard%20Stack&utm_medium=Website&utm_term=sone&utm_campaign=Standard%20Stack" target="_blank") Go to #{company.getText("stack.title")}
+          a.btn-default.btn-large.btn-peach(href="#{company.getText('stack.url')}?utm_source=Standard%20Stack&utm_medium=Website&utm_term=sone&utm_campaign=Standard%20Stack" target="_blank") Go to #{company.getText("stack.title")}
         .col-xs-12.popover-btns
-          a.btn-default.btn-large.btn-dark-gray.close Back to Standard Stack
+          a.btn-default.btn-large.btn-dark-tan.close Back to Standard Stack
             
 extends layout
         
 block content  
-  .companies.brown-bg
-    .container.dark-bg
+  .companies.tan-bg
+    .container
       each category, index in results
         .row
           .col-md-4.col-xs-12
-            h3.upper #{index}
+            h3.bold #{index}
           .col-md-8.col-xs-12
             each company in category  
               .company( data-id="#{company.uid}" )
-                h4.upper.m-b-0 #{company.getText("stack.subcategory")}
-                 p.grow #{company.getText("stack.title")}
+                p.m-b-0 #{company.getText("stack.subcategory")}
+                h2.serif.grow #{company.getText("stack.title")}
               +popover(company)
         .space-4
             
   
-  .email.gray-bg
+  .email.tan-bg
     .container
       .row
         .col-xs-12

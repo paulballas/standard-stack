@@ -1,95 +1,50 @@
 @font-face
-	font-family: "CooperHewitt-Light"
-	src: url('/vendor/fonts/CooperHewitt-Light.eot')
-	src: url('/vendor/fonts/CooperHewitt-Light.eot?#iefix') format('embedded-opentype'), url('/vendor/fonts/CooperHewitt-Light.woff') format('woff'), url('/vendor/fonts/CooperHewitt-Light.svg#CooperHewitt-Light') format('svg')
-	font-weight: 300
-	font-style: normal
-	font-stretch: normal
-	unicode-range: U+0020-FB04
+  font-family: "PublicoHeadlineWeb-Medium"
+  src: url('../vendor/fonts/PublicoHeadlineWeb-Medium.eot?#iefix') format('embedded-opentype'),  url('../vendor/fonts/PublicoHeadlineWeb-Medium.woff') format('woff'), url('../vendor/fonts/PublicoHeadlineWeb-Medium.ttf')  format('truetype'), url('../vendor/fonts/PublicoHeadlineWeb-Medium.svg#PublicoHeadlineWeb-Medium') format('svg')
+  font-weight: 600
+  font-style: normal
 
 @font-face
-	font-family: "CooperHewitt-Book"
-	src: url('/vendor/fonts/CooperHewitt-Book.eot')
-	src: url('/vendor/fonts/CooperHewitt-Book.eot?#iefix') format('embedded-opentype'), url('/vendor/fonts/CooperHewitt-Book.woff') format('woff'), url('/vendor/fonts/CooperHewitt-Book.svg#CooperHewitt-Book') format('svg')
-	font-weight: 400
-	font-style: normal
-	font-stretch: normal
-	unicode-range: U+0020-FB04
-
-@font-face
-	font-family: "CooperHewitt-Medium"
-	src: url('/vendor/fonts/CooperHewitt-Medium.eot')
-	src: url('/vendor/fonts/CooperHewitt-Medium.eot?#iefix') format('embedded-opentype'), url('/vendor/fonts/CooperHewitt-Medium.woff') format('woff'), url('/vendor/fonts/CooperHewitt-Medium.svg#CooperHewitt-Medium') format('svg')
-	font-weight: 500
-	font-style: normal
-	font-stretch: normal
-	unicode-range: U+0020-FB04
-
-
-@font-face
-	font-family: "CooperHewitt-Semibold"
-	src: url('/vendor/fonts/CooperHewitt-Semibold.eot')
-	src: url('/vendor/fonts/CooperHewitt-Semibold.eot?#iefix') format('embedded-opentype'), url('/vendor/fonts/CooperHewitt-Semibold.woff') format('woff'), url('/vendor/fonts/CooperHewitt-Semibold.svg#CooperHewitt-Semibold') format('svg')
-	font-weight: 600
-	font-style: normal
-	font-stretch: normal
-	unicode-range: U+0020-FB04
-
-@font-face
-	font-family: "CooperHewitt-Bold"
-	src: url('/vendor/fonts/CooperHewitt-Bold.eot')
-	src: url('/vendor/fonts/CooperHewitt-Bold.eot?#iefix') format('embedded-opentype'), url('/vendor/fonts/CooperHewitt-Bold.woff') format('woff'), url('/vendor/fonts/CooperHewitt-Bold.svg#CooperHewitt-Bold') format('svg')
-	font-weight: 700
-	font-style: normal
-	font-stretch: normal
-	unicode-range: U+0020-FB04
+  font-family: 'PublicoHeadlineWeb-Extrabold'
+  src: url('../vendor/fonts/PublicoHeadlineWeb-Extrabold.eot?#iefix') format('embedded-opentype'),  url('../vendor/fonts/PublicoHeadlineWeb-Extrabold.woff') format('woff'), url('../vendor/fonts/PublicoHeadlineWeb-Extrabold.ttf')  format('truetype'), url('../vendor/fonts/PublicoHeadlineWeb-Extrabold.svg#PublicoHeadlineWeb-Extrabold') format('svg')
+  font-weight: 700
+  font-style: normal
 
 html,
 body,
 div,
 p
-	font-family: $ch-book
-	color: $black
+	color: $maroon
 
 b,
 span
-	font-family: $ch-medium
+	font-weight: 600
 	color: inherit
 
 h1
-	font-family: $ch-bold
-	text-transform: uppercase
-	color: inherit
-
-h2
-	font-family: $ch-semibold
-	color: inherit
-
-h3
-	font-family: $ch-semibold
-	color: inherit
-	&.book
-		font-family: $ch-book
-
-h4,
-h5
-	font-family: $ch-semibold
-	color: inherit
-
-h6
-	font-family: $ch-light
-	color: inherit
+	font-family: $p-extabold, serif
+	color: $maroon
 
 p
 	&.grow
 		font-size: ms(3)
 
+.serif
+  font-family: $p-medium
+
 *.dark-bg
   &, *
     color: white
+
+*.maroon-txt
+  &, *
+    color: $maroon
 
 .upper
 	text-transform: uppercase
 
 .bold
 	font-weight: 600
+
+.light
+  font-weight: 300
