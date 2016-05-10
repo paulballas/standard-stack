@@ -3,26 +3,47 @@
   padding-bottom: ms(6)
   img
     border-radius: 100%
-    border: 2px solid lighten($maroon, 20%)
+    border: 2px solid lighten($primary-blue, 20%)
 .companies
   padding-top: ms(6)
   padding-bottom: ms(6)
   .company
+    display: flex
+    align-items: flex-start
     padding-left: ms(1)
-    padding-top: ms(-6)
-    border-left: 2px solid darken($peach, 20%)
+    margin-bottom: ms(1)
+    border-left: ms(-8) solid $secondary-blue
     border-top-right-radius: 3px
     border-bottom-right-radius: 3px
-    transition: 400ms
-    -webkit-transition: 400ms
+    transition: 300ms
+    -webkit-transition: 300ms
+    .company-logo
     &:hover
-      background: darken($peach, 20%)
       cursor: pointer
+      border-left: ms(0) solid $secondary-blue
+      .company-logo
+        .cover
+          opacity: 0
+    .company-logo
+      margin-right: ms(2)
+      position: relative
+      .cover
+        background-color: $quaternary-blue
+        width: 85px
+        position: absolute
+        top: 0
+        left: 0
+        opacity: 0.4
+        border-radius: ms(-4)
+        transition: 300ms
+        -webkit-transition: 300ms
+      img
+        border-radius: ms(-4)
     .marker
       display: block
       height: 60px
       width: 2px
-      background: $tan
+      background: $tertiary-blue
       float: left
       margin-right: ms(1)
 .email
@@ -34,7 +55,7 @@
     display: block
     width: ms(8)
     height: 2px
-    background: darken($tan, 10%)
+    background: $tertiary-blue
     margin-top: ms(0)
     margin-bottom: ms(0)
   .email-btn
@@ -42,20 +63,21 @@
   .hello
     a
       font-weight: 700
-      color: $peach
+      color: $primary-blue
       font-size: ms(1)
       padding-left: ms(-5)
       text-decoration: none
       transition: 200ms
       -webkit-transition: 200ms
       &:hover
-        color: $green
+        color: $primary-blue
   .clear
     input
-      background: $green
-      border-color: $green
+      background: $primary-blue
+      border-color: $primary-blue
       &:hover
-        background: darken($green, 10%)
+        background: $dark-primary-blue
+        border-color: $dark-primary-blue
         cursor: pointer
 .footer
   padding-top: ms(2)

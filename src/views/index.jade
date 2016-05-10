@@ -1,7 +1,7 @@
 mixin popover(company)
   .popover(id="#{company.uid}")
     .glass-panel
-    .container.popover-view.tan-bg
+    .container.popover-view.gray-bg
       .row.popover-items
         .col-xs-12.dark-bg
           if company.getImage("stack.logo")
@@ -15,29 +15,33 @@ mixin popover(company)
               li #{awesome.description.value}
         .space-2
         .col-xs-12.popover-btns
-          a.btn-default.btn-large.btn-peach(href="#{company.getText('stack.url')}?utm_source=Standard%20Stack&utm_medium=Website&utm_term=sone&utm_campaign=Standard%20Stack" target="_blank") Go to #{company.getText("stack.title")}
+          a.btn-default.btn-large.btn-primary-blue(href="#{company.getText('stack.url')}?utm_source=Standard%20Stack&utm_medium=Website&utm_term=sone&utm_campaign=Standard%20Stack" target="_blank") Go to #{company.getText("stack.title")}
         .col-xs-12.popover-btns
-          a.btn-default.btn-large.btn-dark-tan.close Back to Standard Stack
+          a.btn-default.btn-large.btn-gray.close Back to Standard Stack
             
 extends layout
         
 block content  
-  .companies.tan-bg
+  .companies.tertiary-bg
     .container
       each category, index in results
         .row
-          .col-md-4.col-xs-12
+          .col-md-4.col-xs-12.gray-txt
             h3.bold #{index}
           .col-md-8.col-xs-12
             each company in category  
-              .company( data-id="#{company.uid}" )
-                p.m-b-0 #{company.getText("stack.subcategory")}
-                h2.serif.grow #{company.getText("stack.title")}
+              .company( data-id="#{company.uid}" ).dark-bg
+                .company-logo
+                  .cover.icon-sm
+                  img.icon-sm.m-auto( src = company.getImage("stack.logo").url )
+                .company-name
+                  p.m-b-0.gray-txt #{company.getText("stack.subcategory")}
+                  h2.m-b-0.serif.grow #{company.getText("stack.title")}
               +popover(company)
         .space-4
             
   
-  .email.tan-bg
+  .email.gray-bg
     .container
       .row
         .col-xs-12
